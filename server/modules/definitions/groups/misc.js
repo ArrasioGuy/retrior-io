@@ -1373,3 +1373,90 @@ exports.tagMode = {
     PARENT: ["bullet"],
     LABEL: "Players",
 };
+exports.youtuberDeco = makeDeco(3);
+exports.youtuber = {
+  PARENT: ["basic"],
+  LABEL: "Youtuber",
+  COLOR: 32,
+  TURRETS: [
+    {
+      POSITION: [7, 0, 0, 0, 0, 1],
+      TYPE: "youtuberDeco",
+    },
+  ],
+};
+exports.machineShot = {
+  PARENT: "genericTank",
+  LABEL: "Machine Shot",
+  DANGER: 7,
+  BODY: {
+    SPEED: 0.85 * base.SPEED,
+  },
+  GUNS: [
+    {
+      POSITION: [16, 8, 1, 0, -3, -30, 0.667],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.shot]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 8, 1, 0, 3, 30, 0.667],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.shot]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [19, 8, 1, 0, -2, -15, 0.333],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.shot]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [19, 8, 1, 0, 2, 15, 0.333],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.shot]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [22, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.shot]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.machinetrapper = {
+  PARENT: "genericTank",
+  LABEL: "Machine Trapper",
+  STAT_NAMES: statnames.trap,
+  GUNS: [
+    {
+      POSITION: [15, 7, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.shot]),
+        TYPE: "trap",
+        STAT_CALCULATOR: gunCalcNames.trap,
+      },
+    },
+  ],
+};
+exports.memetanks = {
+  PARENT: "menu",
+  LABEL: "Meme tanks",
+  COLOR: 36,
+  TOOLTIP: "have fun lol",
+};
+exports.youtuber.UPGRADES_TIER_0 = [
+  "memetanks",
+  // "machineShot",
+  // "machinetrapper"
+  // "youtuberDeco"
+];
