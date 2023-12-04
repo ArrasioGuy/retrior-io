@@ -16,6 +16,11 @@ module.exports = {
     swarm: { reload: 18, recoil: 0.25, shudder: 0.05, size: 0.4, damage: 0.75, speed: 4, spray: 5 },
     factory: { reload: 60, shudder: 0.1, size: 0.7, damage: 0.75, speed: 3, spray: 0.1 },
     productionist: { reload: 75, recoil: 0.25, shudder: 0.05, size: 0.7, damage: 0.75, speed: 4, range: 1.5, spray: 5 },
+    shot: {
+    reload: 0.09,
+    health: 0.9,
+    pen: 0.8,
+  },
 
     // Spammers
     single: { reload: 1.05, speed: 1.05 },
