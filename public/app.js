@@ -2645,7 +2645,7 @@ import * as socketStuff from "./lib/socketInit.js";
     let shift = animations.connecting.get();
     ctx.translate(0, -shift * global.screenHeight);
     drawText(
-      "Connecting...(wait a bit)",
+      "Connecting(wait a bit)...",
       global.screenWidth / 2,
       global.screenHeight / 2,
       30,
