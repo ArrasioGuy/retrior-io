@@ -2649,7 +2649,7 @@ import * as socketStuff from "./lib/socketInit.js";
       global.screenWidth / 2,
       global.screenHeight / 2,
       30,
-      color.guipurple,
+      color.guiwhite,
       "center",
     );
     drawText(
