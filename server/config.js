@@ -7,7 +7,7 @@ module.exports = {
   host: "https://pzqm7q-3000.csb.app/",
 
   // Which port to run the web server on.
-  port: 3000,
+  port: 3433434,
 
   // How often to update the list of the entities that players can see.
   // Has effects of when entities are activated.
