@@ -21,7 +21,15 @@ module.exports = {
     health: 0.9,
     pen: 0.8,
   },
-
+    // Uhhh Yes Ceptions :DDDDDDDDDDDDDDDDDDDDD
+    basiception: {
+    reload: 0.1,
+    recoil: -5,
+    shudder: 0.1,
+    damage: 0.75,
+    speed: 4.5,
+    spray: 15,
+  },
     // Spammers
     single: { reload: 1.05, speed: 1.05 },
     twin: { recoil: 0.5, shudder: 0.9, health: 0.9, damage: 0.7, spray: 1.2 },
