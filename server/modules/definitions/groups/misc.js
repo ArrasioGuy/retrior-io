@@ -1388,6 +1388,7 @@ exports.youtuber = {
 exports.machineShot = {
   PARENT: "genericTank",
   LABEL: "Machine Shot",
+  TOOLTIP: "Heya Content Here Um Please Dont Abuse These",
   DANGER: 7,
   BODY: {
     SPEED: 0.85 * base.SPEED,
@@ -1433,7 +1434,7 @@ exports.machineShot = {
 exports.machinetrapper = {
   PARENT: "genericTank",
   LABEL: "Machine Trapper",
-  STAT_NAMES: statnames.trap,
+  TOOLTIP: "Heya Content Here Um Please Dont Abuse These",
   GUNS: [
     {
       POSITION: [15, 7, 1, 0, 0, 0, 0],
@@ -1448,15 +1449,300 @@ exports.machinetrapper = {
     },
   ],
 };
+exports.blockmachine = {
+  PARENT: "genericTank",
+  LABEL: "Block Machine",
+  COLOR: 0,
+  TOOLTIP: "Heya Content Here Um Please Dont Abuse These",
+  GUNS: [
+    {
+      POSITION: [15, 7, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.shot]),
+        TYPE: "setTrap",
+        STAT_CALCULATOR: gunCalcNames.trap,
+      },
+    },
+  ],
+};
+
 exports.memetanks = {
   PARENT: "menu",
   LABEL: "Meme tanks",
   COLOR: 36,
   TOOLTIP: "have fun lol",
 };
+exports.unused = {
+  PARENT: "menu",
+  LABEL: "Unsued Tanks Menu",
+  COLOR: 1,
+  TOOLTIP: "have fun lol",
+};
 exports.youtuber.UPGRADES_TIER_0 = [
   "memetanks",
+  "unused",
+  "medoing",
   // "machineShot",
-  // "machinetrapper"
-  // "youtuberDeco"
+];
+exports.unused.UPGRADES_TIER_0 = [
+  "rapture",
+  "quadtrapper",
+  "blockmachine",
+  "machinetrapper",
+];
+exports.rapture = {
+  PARENT: ["genericTank"],
+  LABEL: "Rapture",
+  GUNS: [
+    {
+      POSITION: [22, 20, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.rapture]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18, 13, 1.3, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [4, 17, 1, 18, 0, 0, 0],
+    },
+  ],
+};
+exports.AutoRapture = makeAuto(exports.rapture, "Auto-Rapture", {
+  type: exports.AutoTurret,
+  size: 12,
+});
+exports.AutoRapture.UPGRADE_LABEL = "Auto-Rapture";
+exports.quadtrapper = {
+  PARENT: ["genericTank"],
+  LABEL: "Quad-Trapper",
+  GUNS: [
+    {
+      POSITION: [17, 7, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [17, 7, 1, 0, 0, -90, 0],
+    },
+    {
+      POSITION: [17, 7, 1, 0, 0, 90, 0],
+    },
+    {
+      POSITION: [17, 7, 1, 0, 0, -180, 0],
+    },
+    {
+      POSITION: [2, 8, 1.4, 16, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.basic]),
+        TYPE: "trap",
+      },
+    },
+    {
+      POSITION: [2, 8, 1.4, 16, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.basic]),
+        TYPE: "trap",
+      },
+    },
+    {
+      POSITION: [2, 8, 1.4, 16, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.basic]),
+        TYPE: "trap",
+      },
+    },
+    {
+      POSITION: [2, 8, 1.4, 16, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.trap, g.basic]),
+        TYPE: "trap",
+      },
+    },
+  ],
+};
+/*
+exports.medoing = {
+  PARENT: ["genericTank"],
+  LABEL: "Me Going To Your Mom",
+  BODY: {
+    SPEED: 0.85 * base.SPEED,
+  },
+  GUNS: [
+    {
+      POSITION: [16, 24, 0, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.shot]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+*/
+exports.medoing = {
+  PARENT: ["genericTank"],
+  LABEL: "Me doing your mom",
+  GUNS: [
+    {
+      POSITION: [21, 20, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.shot]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+exports.betatester = {
+  PARENT: "menu",
+  LABEL: "Game Beta Tester Menu",
+};
+exports.removedtanks = {
+  PARENT: "menu",
+  LABEL: "Removed Tanks Menu",
+  COLOR: 9,
+};
+exports.unreleasedtanks = {
+  PARENT: "menu",
+  LABEL: "Unreleased Tanks Menu",
+  COLOR: 36,
+};
+
+exports.ceptioniststanks = {
+  PARENT: "menu",
+  LABEL: "Ceptionists Menu",
+  COLOR: 5,
+};
+exports.basicminion = {
+  PARENT: "genericTank",
+  //CONTROLLERS: ["alwaysFire"],
+  LABEL: "Basic",
+  DANGER: 4,
+  BODY: {
+    ACCELERATION: base.ACCEL * 1,
+    SPEED: base.SPEED * 1,
+    HEALTH: base.HEALTH * 1,
+    DAMAGE: base.DAMAGE * 1,
+    PENETRATION: base.PENETRATION * 1,
+    SHIELD: base.SHIELD * 1,
+    REGEN: base.REGEN * 1,
+    FOV: base.FOV * 1,
+    DENSITY: base.DENSITY * 1,
+    PUSHABILITY: 1,
+    HETERO: 3,
+  },
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basiception]),
+        TYPE: "bullet",
+        COLOR: "black",
+        LABEL: "",
+        STAT_CALCULATOR: 0,
+        WAIT_TO_CYCLE: false,
+        AUTOFIRE: true,
+        SYNCS_SKILLS: false,
+        MAX_CHILDREN: 0,
+        ALT_FIRE: false,
+        NEGATIVE_RECOIL: false,
+      },
+    },
+  ],
+};
+exports.basiception = {
+  PARENT: "genericTank",
+  //CONTROLLERS: ["alwaysFire", "mapAltToFire"],
+  TOOLTIP: "Tank Made By Content lol", // AE or other developer Please dont delete this lol but if you want go ahead! :D
+  LABEL: "Basic-Ception",
+  BODY: {
+    ACCELERATION: base.ACCEL * 1,
+    SPEED: base.SPEED * 1,
+    HEALTH: base.HEALTH * 1,
+    DAMAGE: base.DAMAGE * 1,
+    PENETRATION: base.PENETRATION * 1,
+    SHIELD: base.SHIELD * 1,
+    REGEN: base.REGEN * 1,
+    FOV: base.FOV * 1,
+    DENSITY: base.DENSITY * 1,
+    PUSHABILITY: 1,
+    HETERO: 3,
+  },
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "basicminion",
+        COLOR: "grey",
+        LABEL: "",
+        STAT_CALCULATOR: 0,
+        WAIT_TO_CYCLE: false,
+        AUTOFIRE: false,
+        SYNCS_SKILLS: false,
+        MAX_CHILDREN: 0,
+        ALT_FIRE: false,
+        NEGATIVE_RECOIL: false,
+      },
+    },
+  ],
+};
+exports.tripilet = {
+  PARENT: ["genericTank"],
+  LABEL: "Tripilet",
+  GUNS: [
+    {
+      POSITION: [18, 8, 1, 0, -6, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [18, 8, 1, 0, 6, 0, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [19, 8, 1, 1, 0, 0, 5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [14, 16, 1.4, 0, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [12, 8, 1.3, 0, 0, -90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.swarm]),
+        TYPE: exports.swarm,
+      },
+    },
+    {
+      POSITION: [12, 8, 1.3, 0, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.swarm]),
+        TYPE: exports.swarm,
+      },
+    },
+  ],
+};
+
+// Ceptionists
+exports.unreleasedtanks.UPGRADES_TIER_0 = ["betatester", "ceptioniststanks", "tripilet"];
+exports.removedtanks.UPGRADES_TIER_0 = ["betatester"];
+exports.ceptioniststanks.UPGRADES_TIER_0 = ["basiception"];
+exports.betatester.UPGRADES_TIER_0 = [
+  "removedtanks",
+  "unreleasedtanks",
+  "sentries",
 ];
